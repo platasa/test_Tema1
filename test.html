@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test de Incendios Forestales</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .feedback {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    </style>
+    <script>
+        function checkAnswer(questionNumber, correctOption) {
+            const selectedOption = document.querySelector(`input[name="question${questionNumber}"]:checked`).value;
+            const feedback = document.getElementById(`feedback${questionNumber}`);
+            if (selectedOption === correctOption) {
+                feedback.textContent = "OK";
+                setTimeout(() => {
+                    feedback.textContent = "";
+                }, 2000);
+            } else {
+                feedback.textContent = "TORPE";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Test de Incendios Forestales</h1>
+
+    <div class="question">
+        <p>1. ¿Cuál es una de las principales causas de los incendios forestales en Navarra?</p>
+        <input type="radio" name="question1" value="A"> A) Causas naturales<br>
+        <input type="radio" name="question1" value="B"> B) Causas antrópicas<br>
+        <input type="radio" name="question1" value="C"> C) Actividad volcánica<br>
+        <input type="radio" name="question1" value="D"> D) Rayos<br>
+        <button onclick="checkAnswer(1, 'B')">Comprobar</button>
+        <div id="feedback1" class="feedback"></div>
+    </div>
+
+    <div class="question">
+        <p>2. ¿En qué meses se considera que hay bajo riesgo de incendio forestal en Navarra?</p>
+        <input type="radio" name="question2" value="A"> A) Enero, Febrero, Marzo y Abril<br>
+        <input type="radio" name="question2" value="B"> B) Junio, Julio, Agosto y Septiembre<br>
+        <input type="radio" name="question2" value="C"> C) Mayo, Octubre, Noviembre y Diciembre<br>
+        <input type="radio" name="question2" value="D"> D) Todo el año<br>
+        <button onclick="checkAnswer(2, 'C')">Comprobar</button>
+        <div id="feedback2" class="feedback"></div>
+    </div>
+
+    <div class="question">
+        <p>3. ¿Cuál es una de las funciones en prevención y extinción de incendios forestales en invierno en Navarra?</p>
+        <input type="radio" name="question3" value="A"> A) Planificación y ejecución de quemas para la mejora de pastizales<br>
+        <input type="radio" name="question3" value="B"> B) Reducción de la densidad de población<br>
+        <input type="radio" name="question3" value="C"> C) Aumento de la temperatura<br>
+        <input type="radio" name="question3" value="D"> D) Generación de lluvias<br>
+        <button onclick="checkAnswer(3, 'A')">Comprobar</button>
+        <div id="feedback3" class="feedback"></div>
+    </div>
+
+    <div class="question">
+        <p>4. ¿Qué sección de la Dirección de Bomberos de Navarra se encarga de la formación?</p>
+        <input type="radio" name="question4" value="A"> A) Sección de Gestión Administrativa y de Personal<br>
+        <input type="radio" name="question4" value="B"> B) Sección de Prevención, Inspección y Divulgación<br>
+        <input type="radio" name="question4" value="C"> C) Sección de Formación<br>
+        <input type="radio" name="question4" value="D"> D) Sección Técnica, de Logística y Equipos<br>
+        <button onclick="checkAnswer(4, 'C')">Comprobar</button>
+        <div id="feedback4" class="feedback"></div>
+    </div>
+
+    <div class="question">
+        <p>5. ¿Qué grupo de bomberos se encarga del rescate acuático?</p>
+        <input type="radio" name="question5" value="A"> A) Grupo Forestal<br>
+        <input type="radio" name="question5" value="B"> B) Grupo de Rescate Acuático<br>
+        <input type="radio" name="question5" value="C"> C) Grupo de Intervención Rápida<br>
+        <input type="radio" name="question5" value="D"> D) Grupo de Apoyo Logístico<br>
+        <button onclick="checkAnswer(5, 'B')">Comprobar</button>
+        <div id="feedback5" class="feedback"></div>
+    </div>
+
+</body>
+</html>
